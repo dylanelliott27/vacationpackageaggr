@@ -1,0 +1,22 @@
+<h1>Run time: <span th:text="${latestRun.getCreated()}"></span></h1>
+
+
+<table>
+    <tr>
+        <th>Country</th>
+        <th>Resort Name</th>
+        <th>Price</th>
+        <th>Departure Date</th>
+        <th>Link</th>
+    </tr>
+
+    <tr th:each="trip : ${latestRun.getTrips()}">
+        <td th:text="${trip.getCountry()}"></td>
+        <td th:text="${trip.getResortName()}"></td>
+        <td th:text="${trip.getPrice()}"></td>
+        <td th:text="${trip.getDepartureDate()}"></td>
+        <td th:link="${trip.getLink()}"><a th:href="${trip.getLink()}">Here</a></td>
+
+    </tr>
+
+</table>
